@@ -1,0 +1,483 @@
+@keyframes mywave {
+  from {
+    display: block;
+    opacity: 0;
+  }
+  to {
+    display: block;
+    opacity: 1;
+  }
+}
+body {
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+  background-color: #f2f2f2;
+}
+
+p {
+  margin: 40px;
+}
+
+#span {
+  cursor: pointer;
+}
+
+/* ------------- header page start  ---------------- */
+.header {
+  width: 100%;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  background-color: white;
+}
+
+#headerText {
+  font-family: "Oswald", sans-serif;
+  font-size: 45px;
+  cursor: pointer;
+}
+
+/* ------------- header page end ---------------- */
+
+/* ------------- slider page start ----------------*/
+.slider {
+  width: 100%;
+  height: 752px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.slides {
+  width: 500%;
+  height: 752px;
+  display: flex;
+}
+
+.slides input {
+  display: none;
+}
+
+.slide {
+  width: 20%;
+  transition: 2s;
+}
+
+.slide img {
+  width: 100%;
+  height: 752px;
+}
+
+.navigation-manual {
+  position: absolute;
+  width: 100%;
+  margin-top: -40px;
+  display: flex;
+  justify-content: center;
+}
+
+.manual-btn {
+  border: 2px solid white;
+  padding: 5px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 1s;
+}
+
+.manual-btn:not(:last-child) {
+  margin-right: 40px;
+}
+
+.manual-btn:hover {
+  background: white;
+}
+
+#radio1:checked ~ .first {
+  margin-left: 0;
+}
+
+#radio2:checked ~ .first {
+  margin-left: -20%;
+}
+
+#radio3:checked ~ .first {
+  margin-left: -40%;
+}
+
+#radio4:checked ~ .first {
+  margin-left: -60%;
+}
+
+.navigation-auto {
+  position: absolute;
+  width: 100%;
+  margin-top: 712px;
+  margin-left: -20px;
+  display: flex;
+  justify-content: center;
+  z-index: 0;
+}
+
+.navigation-auto div {
+  border: 2px solid white;
+  padding: 5px;
+  margin-left: 40px;
+  border-radius: 10px;
+  transition: 1s;
+  z-index: 0;
+}
+
+.navigation-auto div :not(:last-child) {
+  margin-right: 40px;
+}
+
+#radio1:checked ~ .navigation-auto .auto-btn1 {
+  background: white;
+}
+#radio2:checked ~ .navigation-auto .auto-btn2 {
+  background: white;
+}
+#radio3:checked ~ .navigation-auto .auto-btn3 {
+  background: white;
+}
+#radio4:checked ~ .navigation-auto .auto-btn4 {
+  background: white;
+}
+
+/* ------------- slider page end ------------*/
+
+/* ---------------------- main page start -------------------------------*/
+
+.main {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 90px;
+}
+
+.div {
+  width: 1700px;
+  height: 500px;
+  border: 1px black solid;
+  display: flex;
+  margin-bottom: 50px;
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+}
+
+.nell {
+  margin-right: 150px;
+  background-color: black;
+}
+
+.thornapple {
+  margin-left: 130px;
+  background-color: rgba(23, 27, 49, 1);
+}
+
+.hyukoh {
+  margin-right: 50px;
+  background-color: rgb(150, 113, 17);
+}
+
+.mot {
+  margin-right: 0px;
+  background-color: rgb(67, 46, 44);
+}
+
+.informdiv {
+  width: 100%;
+  height: 100%;
+  color: white;
+  font-size: 24px;
+  font-weight: 500;
+  padding-left: 50px;
+  font-family: "Nanum Gothic", sans-serif;
+}
+
+.Btn {
+  width: 170px;
+  height: 40px;
+  margin-left: 180px;
+  margin-top: 30px;
+  border: 2px solid white;
+  border-radius: 15px;
+  background-color: black;
+  color: white;
+  opacity: 0.5;
+  transition: 0.5s;
+}
+
+.Btn:hover {
+  cursor: pointer;
+  opacity: 1;
+}
+
+.thornappleBtn {
+  background-color: rgba(23, 27, 49, 1);
+}
+
+.hyukohBtn {
+  background-color: rgb(150, 113, 17);
+}
+
+.motBtn {
+  background-color: rgb(67, 46, 44);
+}
+
+/* -------- modal page start --------- */
+
+.modal {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.modalcontent {
+  width: 900px;
+  height: 600px;
+  background-color: whitesmoke;
+  margin: 50px auto;
+  margin-top: 140px;
+  z-index: 1;
+  border-radius: 10px;
+}
+
+.modalcontent-closeBtndiv {
+  width: 100%;
+  height: 5%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.modalcontent-name {
+  width: 100%;
+  height: 15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+  font-family: "Oswald", sans-serif;
+}
+
+.name {
+  margin-bottom: 70px;
+  color: black;
+}
+
+.modal-information {
+  width: 100%;
+  height: 80%;
+  color: white;
+}
+
+.underimg {
+  width: 100%;
+  height: 100%;
+}
+
+.opacitydiv {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  bottom: 483.5px;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.text {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  width: 100%;
+  height: 300px;
+  margin-top: 30px;
+}
+
+.sns {
+  width: 100%;
+  height: 150px;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.inform {
+  width: 400px;
+  height: 100px;
+  margin: 4px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  opacity: 0.5;
+  transition: 0.5s;
+}
+
+.logo:hover {
+  opacity: 1;
+}
+
+.fadeIn {
+  pointer-events: all !important;
+  opacity: 1 !important;
+}
+
+#nellmodal {
+  pointer-events: none;
+  display: block;
+  opacity: 0;
+  transition-duration: 1s;
+}
+
+#nellmodalcontent {
+  display: block;
+}
+
+#thornapplemodal {
+  pointer-events: none;
+  display: block;
+  opacity: 0;
+  transition-duration: 1s;
+}
+
+#thornapplemodalcontent {
+  display: block;
+}
+
+#hyukohmodal {
+  pointer-events: none;
+  display: block;
+  opacity: 0;
+  transition-duration: 1.5s;
+}
+
+#hyukohmodalcontent {
+  display: block;
+}
+
+#motmodal {
+  pointer-events: none;
+  display: block;
+  opacity: 0;
+  transition-duration: 1.5s;
+}
+
+#motmodalcontent {
+  display: block;
+}
+
+#span {
+  cursor: pointer;
+}
+
+/* ------ modal page end ------ */
+
+/* ------  rank page start ------*/
+
+.rank-Allwrap {
+  width: 100%;
+  height: 1500px;
+  margin-top: 100px;
+}
+
+.rank-title {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  font-family: "Nanum Gothic", sans-serif;
+  font-weight: 800;
+}
+
+.rank-wrap {
+  width: 100%;
+  height: 1000px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.rank {
+  width: 790px;
+  height: 600px;
+  margin: 30px auto;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+.rank-rank {
+  width: 100%;
+  height: 13%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  font-weight: 550;
+  text-align: center;
+}
+
+.rank-video {
+  width: 100%;
+  height: 65%;
+
+  display: flex;
+  justify-content: center;
+}
+
+.rank-inform {
+  width: 100%;
+  height: 22%;
+}
+
+.rank-inform-div {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.rank-inform-detail {
+  width: 280px;
+  height: 40px;
+  text-align: center;
+  color: black;
+  font-family: "Nanum Gothic", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  margin: 10px auto;
+}
+
+.fir {
+  color: #ffb01f;
+}
+
+.sec {
+  color: chocolate;
+}
+
+.view {
+  color: coral;
+}
