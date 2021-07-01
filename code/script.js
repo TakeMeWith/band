@@ -61,28 +61,6 @@ var closemotmodal = function(){
 
 // Youtube Api  
 
-// Nell api
-
-const nellyoutubeKey = 'AIzaSyAhle-jPT4WvmycnfKxXO7G_e-bb-7wkMw';
-const nellyoutubeVideo = '83IfZhO4Pd0';
-const nellViewCount = document.getElementById('nellViewCount');
-const nellLikeCount = document.getElementById('nelllikeCount');
-const nellCommentCount = document.getElementById('nellCommentCount');
-
-let getnellViewCount = () => {
-    fetch(`https://www.googleapis.com/youtube/v3/videos?part=statistics&id=${nellyoutubeVideo}&key=${nellyoutubeKey}`)
-        .then(response => {
-            return response.json();
-        })
-        .then(data => {
-            console.log(data);
-            nellViewCount.innerHTML = data["items"][0].statistics.viewCount
-            nellLikeCount.innerHTML = data["items"][0].statistics.likeCount
-            nellCommentCount.innerHTML = data["items"][0].statistics.commentCount
-        })
-}
-
-setInterval(getnellViewCount(), 1000);
 
 // hyukoh api 
 
@@ -106,3 +84,73 @@ let gethyukohViewCount = () => {
 }
 
 setInterval(gethyukohViewCount(), 1000);
+
+
+// Nell api
+
+const nellyoutubeKey = 'AIzaSyAhle-jPT4WvmycnfKxXO7G_e-bb-7wkMw';
+const nellyoutubeVideo = '83IfZhO4Pd0';
+const nellViewCount = document.getElementById('nellViewCount');
+const nellLikeCount = document.getElementById('nelllikeCount');
+const nellCommentCount = document.getElementById('nellCommentCount');
+
+let getnellViewCount = () => {
+    fetch(`https://www.googleapis.com/youtube/v3/videos?part=statistics&id=${nellyoutubeVideo}&key=${nellyoutubeKey}`)
+    .then(response => {
+        return response.json();
+    })
+    .then(data => {
+        console.log(data);
+        nellViewCount.innerHTML = data["items"][0].statistics.viewCount
+        nellLikeCount.innerHTML = data["items"][0].statistics.likeCount
+        nellCommentCount.innerHTML = data["items"][0].statistics.commentCount
+    })
+}
+
+setInterval(getnellViewCount(), 1000);
+
+// thornapple api
+
+const thornappleyoutubeKey = 'AIzaSyAhle-jPT4WvmycnfKxXO7G_e-bb-7wkMw';
+const thornappleyoutubeVideo = 'mKOOH3_xXj0';
+const thornappleViewCount = document.getElementById('thornappleViewCount');
+const thornappleLikeCount = document.getElementById('thornapplelikeCount');
+const thornappleCommentCount = document.getElementById('thornappleCommentCount');
+
+let getthornappleViewCount = () => {
+    fetch(`https://www.googleapis.com/youtube/v3/videos?part=statistics&id=${thornappleyoutubeVideo}&key=${thornappleyoutubeKey}`)
+    .then(response => {
+        return response.json();
+    })
+    .then(data => {
+        console.log(data);
+        thornappleViewCount.innerHTML = data["items"][0].statistics.viewCount
+        thornappleLikeCount.innerHTML = data["items"][0].statistics.likeCount
+        thornappleCommentCount.innerHTML = data["items"][0].statistics.commentCount
+    })
+}
+
+setInterval(getthornappleViewCount(), 1000);
+
+// mot api
+
+const motyoutubeKey = 'AIzaSyAhle-jPT4WvmycnfKxXO7G_e-bb-7wkMw';
+const motyoutubeVideo = 'Gd1RNbhF6A8';
+const motViewCount = document.getElementById('motViewCount');
+const motLikeCount = document.getElementById('motlikeCount');
+const motCommentCount = document.getElementById('motCommentCount');
+
+let getmotViewCount = () => {
+    fetch(`https://www.googleapis.com/youtube/v3/videos?part=statistics&id=${motyoutubeVideo}&key=${motyoutubeKey}`)
+    .then(response => {
+        return response.json();
+    })
+    .then(data => {
+        console.log(data);
+        motViewCount.innerHTML = data["items"][0].statistics.viewCount
+        motLikeCount.innerHTML = data["items"][0].statistics.likeCount
+        motCommentCount.innerHTML = data["items"][0].statistics.commentCount
+    })
+}
+
+setInterval(getmotViewCount(), 1000);

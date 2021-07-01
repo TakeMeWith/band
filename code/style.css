@@ -477,13 +477,14 @@ p {
 .sec {
   color: chocolate;
 }
+.thr {
+  color: cornflowerblue;
+}
+
+.for {
+  color: darkgoldenrod;
+}
 
 .view {
   color: coral;
-}
-
-.test {
-  width: 900px;
-  height: 900px;
-  background-color: red;
 }
