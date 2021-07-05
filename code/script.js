@@ -76,7 +76,6 @@ let gethyukohViewCount = () => {
         return response.json(); 
     })
     .then(data => {
-    
         hyukohViewCount.innerHTML = AddComma(data["items"][0].statistics.viewCount);
         hyukohLikeCount.innerHTML = AddComma(data["items"][0].statistics.likeCount);
         hyukohCommentCount.innerHTML = AddComma(data["items"][0].statistics.commentCount);
@@ -100,7 +99,6 @@ let getnellViewCount = () => {
         return response.json();
     })
     .then(data => {
-    
         nellViewCount.innerHTML = AddComma(data["items"][0].statistics.viewCount);
         nellLikeCount.innerHTML = AddComma(data["items"][0].statistics.likeCount);
         nellCommentCount.innerHTML = AddComma(data["items"][0].statistics.commentCount)
@@ -145,7 +143,6 @@ let getmotViewCount = () => {
         return response.json();
     })
     .then(data => {
-
         motViewCount.innerHTML = AddComma(data["items"][0].statistics.viewCount);
         motLikeCount.innerHTML = AddComma(data["items"][0].statistics.likeCount);
         motCommentCount.innerHTML = AddComma(data["items"][0].statistics.commentCount);
@@ -157,3 +154,16 @@ setInterval(getmotViewCount(), 1000);
 function AddComma(potato) {
     return Number(potato).toLocaleString('en');
 }
+
+
+
+/* counter upper */
+$(document).ready(function(){
+    $(nellViewCount.innerHTML).counterUp({
+        delay : 10,
+        time : 1200
+    });
+});
+
+
+
