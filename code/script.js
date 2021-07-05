@@ -73,13 +73,13 @@ const hyukohCommentCount = document.getElementById('hyukohCommentCount');
 let gethyukohViewCount = () => {
     fetch(`https://www.googleapis.com/youtube/v3/videos?part=statistics&id=${hyukohyoutubeVideo}&key=${hyukohyoutubeKey}`)
     .then(response => {
-        return response.json();
+        return response.json(); 
     })
     .then(data => {
-        console.log(data);
-        hyukohViewCount.innerHTML = data["items"][0].statistics.viewCount
-        hyukohLikeCount.innerHTML = data["items"][0].statistics.likeCount
-        hyukohCommentCount.innerHTML = data["items"][0].statistics.commentCount
+    
+        hyukohViewCount.innerHTML = AddComma(data["items"][0].statistics.viewCount);
+        hyukohLikeCount.innerHTML = AddComma(data["items"][0].statistics.likeCount);
+        hyukohCommentCount.innerHTML = AddComma(data["items"][0].statistics.commentCount);
     })
 }
 
@@ -100,10 +100,10 @@ let getnellViewCount = () => {
         return response.json();
     })
     .then(data => {
-        console.log(data);
-        nellViewCount.innerHTML = data["items"][0].statistics.viewCount
-        nellLikeCount.innerHTML = data["items"][0].statistics.likeCount
-        nellCommentCount.innerHTML = data["items"][0].statistics.commentCount
+    
+        nellViewCount.innerHTML = AddComma(data["items"][0].statistics.viewCount);
+        nellLikeCount.innerHTML = AddComma(data["items"][0].statistics.likeCount);
+        nellCommentCount.innerHTML = AddComma(data["items"][0].statistics.commentCount)
     })
 }
 
@@ -123,10 +123,9 @@ let getthornappleViewCount = () => {
         return response.json();
     })
     .then(data => {
-        console.log(data);
-        thornappleViewCount.innerHTML = data["items"][0].statistics.viewCount
-        thornappleLikeCount.innerHTML = data["items"][0].statistics.likeCount
-        thornappleCommentCount.innerHTML = data["items"][0].statistics.commentCount
+        thornappleViewCount.innerHTML = AddComma(data["items"][0].statistics.viewCount);
+        thornappleLikeCount.innerHTML = AddComma(data["items"][0].statistics.likeCount);
+        thornappleCommentCount.innerHTML = AddComma(data["items"][0].statistics.commentCount);
     })
 }
 
@@ -146,11 +145,15 @@ let getmotViewCount = () => {
         return response.json();
     })
     .then(data => {
-        console.log(data);
-        motViewCount.innerHTML = data["items"][0].statistics.viewCount
-        motLikeCount.innerHTML = data["items"][0].statistics.likeCount
-        motCommentCount.innerHTML = data["items"][0].statistics.commentCount
+
+        motViewCount.innerHTML = AddComma(data["items"][0].statistics.viewCount);
+        motLikeCount.innerHTML = AddComma(data["items"][0].statistics.likeCount);
+        motCommentCount.innerHTML = AddComma(data["items"][0].statistics.commentCount);
     })
 }
 
 setInterval(getmotViewCount(), 1000);
+
+function AddComma(potato) {
+    return Number(potato).toLocaleString('en');
+}
